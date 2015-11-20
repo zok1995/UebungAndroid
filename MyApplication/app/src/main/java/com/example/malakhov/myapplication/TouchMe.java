@@ -63,4 +63,5 @@ public class TouchMe extends Activity{
                 color, DOT_DIAMETER);
 
     }
+
 }

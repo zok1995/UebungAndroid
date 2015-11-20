@@ -38,11 +38,33 @@ public class DotView extends View {
 
     @Override
     protected void onMeasure (int widthMeasureSpec, int heightMeasureSpec){
-        setMeasuredDimension(
-                getSuggestedMinimumWidth(),
-                getSuggestedMinimumHeight());
+        int measureHeight = measureHeight(heightMeasureSpec);
+        int measureWigth = measureWidt(widthMeasureSpec);
+        setMeasuredDimension(measureHeight,measureWigth);
     }
 
+    private int measureHeight(int measureSpec){
+        int specMode = MeasureSpec.getMode(measureSpec);
+        int specSize = MeasureSpec.getSize(measureSpec);
+        int result = 500;
+        if(specMode == MeasureSpec.AT_MOST){
+            result = specSize;
+        } else if (specMode == MeasureSpec.EXACTLY){
+            result = specSize;
+        }
+        return result;
+    }
+    private int measureWidt(int measureSpec){
+        int specMode = MeasureSpec.getMode(measureSpec);
+        int specSize = MeasureSpec.getSize(measureSpec);
+        int result = 500;
+        if (specMode == MeasureSpec.AT_MOST){
+            result = specSize;
+        }else if(specMode == MeasureSpec.EXACTLY){
+            result = specSize;
+        }
+        return  result;
+    }
     @Override
     protected void onDraw(Canvas canvas) {
         Paint paint = new Paint();
