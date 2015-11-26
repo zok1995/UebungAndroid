@@ -8,6 +8,8 @@ import java.util.List;
  * Created by malakhov on 19.11.2015.
  */
 public class Dots {
+
+
     public interface DotsChangeListener{
         void onDotsChanged(Dots dots);
     }
